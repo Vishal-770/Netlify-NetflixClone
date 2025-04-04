@@ -1,0 +1,43 @@
+@import "tailwindcss";
+body,html{
+  margin: 0;
+  padding: 0;
+  cursor: pointer;
+ 
+}
+.body-div{
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#root{
+  
+  background-color: black;
+  color: white;
+}
+
+.active{
+  color: red;
+  
+
+}
+
+.body-div-movie{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap:4vw;
+  padding: 5vw 2vw;
+
+}
+.searchBar{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+
