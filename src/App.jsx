@@ -11,36 +11,40 @@ import { GetApiData } from "./api/GetApiData";
 
 
 function App() {
-  const router = createBrowserRouter([
+  const router = createBrowserRouter(
+    [
+      {
+        path: "/",
+        element: <AppLayout />,
+        children: [
+          {
+            path: "/",
+            element: <Home />,
+          },
+          {
+            path: "about",
+            element: <About />,
+          },
+          {
+            path: "contact",
+            element: <Contact />,
+          },
+          {
+            path: "movies",
+            element: <Movies />,
+            loader: GetApiData,
+          },
+          {
+            path: "*",
+            element: <ErrorPage />,
+          },
+        ],
+      },
+    ],
     {
-      path: "/",
-      element: <AppLayout />, 
-    //  errorElement:<ErrorPage></ErrorPage>,
-      children: [
-        {
-          path: "/",
-          element: <Home />,
-        },
-        {
-          path: "/about",
-          element: <About />,
-        },
-        {
-          path: "/contact",
-          element: <Contact />,
-        },
-        {
-          path: "/movies",
-          element: <Movies />,
-          loader:GetApiData,
-        },
-        {
-          path: "*",
-          element: <ErrorPage />,
-        },
-      ],
-    },
-  ]);
+      basename: "/NetflixClone", // 👈 Add this line
+    }
+  );
 
 
 
