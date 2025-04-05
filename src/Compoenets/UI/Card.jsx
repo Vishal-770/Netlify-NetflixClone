@@ -1,6 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router";
 
-const Card = ({ title, description, imageUrl, rating }) => {
+const Card = ({ title, description, imageUrl, rating,id }) => {
   return (
     <div className="group relative h-48 w-80 min-w-[320px] rounded-md overflow-hidden shadow-lg transition-all duration-300 transform hover:scale-105 hover:z-10">
       {/* Movie Image */}
@@ -32,6 +33,8 @@ const Card = ({ title, description, imageUrl, rating }) => {
           <div className="mt-auto opacity-0 group-hover:opacity-100 transition-opacity duration-300">
             {/* Action Buttons */}
             <div className="flex space-x-2">
+
+              <NavLink to={`/movies/${id}`}>
               <button className="bg-red-600 hover:bg-red-700 text-white rounded-full p-2 transition-colors duration-200 flex items-center justify-center">
                 <svg
                   className="w-4 h-4"
@@ -54,6 +57,7 @@ const Card = ({ title, description, imageUrl, rating }) => {
                 </svg>
                 <span className="ml-1 text-xs">Play</span>
               </button>
+              </NavLink>
               <button className="bg-gray-800 bg-opacity-70 hover:bg-opacity-100 text-white rounded-full p-2 transition-colors duration-200 flex items-center justify-center">
                 <svg
                   className="w-4 h-4"

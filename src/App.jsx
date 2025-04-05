@@ -8,6 +8,7 @@ import Movies from "./pages/Movies";
 import AppLayout from "./Compoenets/layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 import { GetApiData } from "./api/GetApiData";
+import Moviedetails from "./pages/Moviedetails";
 
 
 function App() {
@@ -33,6 +34,12 @@ function App() {
             path: "movies",
             element: <Movies />,
             loader: GetApiData,
+          },
+          {
+            path: "movies/:movieID",
+            element: <Moviedetails/>,
+            loader: GetApiData,
+            
           },
           {
             path: "*",
