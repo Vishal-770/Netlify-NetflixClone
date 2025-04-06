@@ -9,7 +9,7 @@ import AppLayout from "./Compoenets/layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 import { GetApiData } from "./api/GetApiData";
 import Moviedetails from "./pages/Moviedetails";
-
+import Catogery from "./pages/Catogery";
 
 function App() {
   const router = createBrowserRouter(
@@ -37,9 +37,12 @@ function App() {
           },
           {
             path: "movies/:movieID",
-            element: <Moviedetails/>,
+            element: <Moviedetails />,
             loader: GetApiData,
-            
+          },
+          {
+            path: "explore",
+            element: <Catogery />,
           },
           {
             path: "*",
@@ -52,8 +55,6 @@ function App() {
       basename: "/NetflixClone", // 👈 Add this line
     }
   );
-
-
 
   return (
     <>
