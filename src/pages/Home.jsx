@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Home = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
+  // const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [activeFAQ, setActiveFAQ] = useState(null);
 
   useEffect(() => {
@@ -172,7 +172,7 @@ const Home = () => {
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 gap-4">
           {genres.map((genre, index) => (
             <NavLink 
-              to={`/genre/${genre.toLowerCase()}`} 
+              to={`/category`} 
               key={genre}
               className="scroll-animate opacity-0 translate-y-10"
               style={{ transitionDelay: `${index * 50}ms` }}

@@ -9,7 +9,8 @@ import AppLayout from "./Compoenets/layout/AppLayout";
 import ErrorPage from "./pages/ErrorPage";
 import { GetApiData } from "./api/GetApiData";
 import Moviedetails from "./pages/Moviedetails";
-import Catogery from "./pages/Catogery";
+import Explore from "./pages/Explore";
+import Category from "./pages/Category";
 
 function App() {
   const router = createBrowserRouter(
@@ -42,7 +43,11 @@ function App() {
           },
           {
             path: "explore",
-            element: <Catogery />,
+            element: <Explore />,
+          },
+          {
+            path: "category",
+            element: <Category />,
           },
           {
             path: "*",
@@ -52,7 +57,7 @@ function App() {
       },
     ],
     {
-      basename: "/NetflixClone", // 👈 Add this line
+      basename: "/NetflixClone",
     }
   );
 

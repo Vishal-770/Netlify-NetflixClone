@@ -48,6 +48,12 @@ const Navbar = () => {
                     Explore
                   </NavLink>
                   <NavLink 
+                    to="/category" 
+                    className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium"
+                  >
+                    Category
+                  </NavLink>
+                  <NavLink 
                     to="/about" 
                     className="text-white hover:text-gray-300 px-3 py-2 text-sm font-medium"
                   >
@@ -104,6 +110,13 @@ const Navbar = () => {
                 className="text-white hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium"
               >
                Explore
+              </NavLink>
+              <NavLink 
+                to="/category" 
+                onClick={() => setIsMenuOpen(false)}
+                className="text-white hover:bg-gray-900 block px-3 py-2 rounded-md text-base font-medium"
+              >
+                Category
               </NavLink>
               <NavLink 
                 to="/about" 
