@@ -11,55 +11,56 @@ import { GetApiData } from "./api/GetApiData";
 import Moviedetails from "./pages/Moviedetails";
 import Explore from "./pages/Explore";
 import Category from "./pages/Category";
+import Contact1, { contactData } from "./pages/Contact1";
 
 function App() {
-  const router = createBrowserRouter(
-    [
-      {
-        path: "/",
-        element: <AppLayout />,
-        children: [
-          {
-            path: "/",
-            element: <Home />,
-          },
-          {
-            path: "about",
-            element: <About />,
-          },
-          {
-            path: "contact",
-            element: <Contact />,
-          },
-          {
-            path: "movies",
-            element: <Movies />,
-            loader: GetApiData,
-          },
-          {
-            path: "movies/:movieID",
-            element: <Moviedetails />,
-            loader: GetApiData,
-          },
-          {
-            path: "explore",
-            element: <Explore />,
-          },
-          {
-            path: "category",
-            element: <Category />,
-          },
-          {
-            path: "*",
-            element: <ErrorPage />,
-          },
-        ],
-      },
-    ],
+  const router = createBrowserRouter([
     {
-      basename: "/NetflixClone",
-    }
-  );
+      path: "/",
+      element: <AppLayout />,
+      children: [
+        {
+          path: "/",
+          element: <Home />,
+        },
+        {
+          path: "about",
+          element: <About />,
+        },
+        {
+          path: "contact",
+          element: <Contact />,
+        },
+        {
+          path: "movies",
+          element: <Movies />,
+          loader: GetApiData,
+        },
+        {
+          path: "movies/:movieID",
+          element: <Moviedetails />,
+          loader: GetApiData,
+        },
+        {
+          path: "explore",
+          element: <Explore />,
+        },
+        {
+          path: "category",
+          element: <Category />,
+        },
+        {
+          path: "*",
+          element: <ErrorPage />,
+        },
+        {
+          path: "/contactTest",
+          element: <Contact1 />,
+          action: contactData,
+        },
+      ],
+    },
+  ]);
 
   return (
     <>
